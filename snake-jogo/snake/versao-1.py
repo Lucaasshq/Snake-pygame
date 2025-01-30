@@ -7,6 +7,7 @@ largura, altura = 640, 480
 tamanho = largura, altura
 tela = pygame.display.set_mode((tamanho))
 
+imagem_fundo = pygame.image.load("snake-jogo\snake\Fundo.png")
 nome_do_jogo = pygame.display.set_caption("Snake")
 
 
@@ -21,8 +22,8 @@ while rodando:
 
     
     
-    tela.fill(cor_fundo)
-    # Atualiza a tela
+    tela.blit(imagem_fundo, (0, 0))
+ 
     pygame.display.flip()
         
 
