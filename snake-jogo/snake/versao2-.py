@@ -6,7 +6,7 @@ import random
 pygame.init()
 
 
-largura, altura = 640, 480
+largura, altura = 940, 880
 tamanho = largura, altura
 # Cria a tela do jogo com as dimensões especificadas
 tela = pygame.display.set_mode((tamanho))
@@ -38,7 +38,24 @@ def carregar_imagem_fruta():
     imagem_fruta = pygame.transform.scale(imagem_fruta, (10, 10))
     return imagem_fruta
 
+def carregar_imagem_corpo():
+    imagem_corpo = pygame.image.load("snake-jogo/snake/2.png")
+    imagem_corpo = pygame.transform.scale(imagem_corpo, (10,10))
+
+    return imagem_corpo
+
+def carregar_imagem_de_fundo():
+    imagem_fundo = pygame.image.load("snake-jogo/snake/fundo.jpg")
+    imagem_fundo = pygame.transform.scale(imagem_fundo, (largura,altura))
+    return imagem_fundo
+
+
+
+
 imagem_fruta = carregar_imagem_fruta()
+imagem_corpo = carregar_imagem_corpo()
+imagem_fundo = carregar_imagem_de_fundo()
+
 
 
 direcao = "DIREITA"
@@ -103,16 +120,17 @@ while rodando:
     fruta_spawn = True
     
     # Preenche a tela com a cor de fundo
-    tela.fill(cor_fundo)
+    tela.blit(imagem_fundo, (0,0))
     text_surface, text_position = exibir_texto_pontos(pontos)
     tela.blit(text_surface, text_position)
     
-    
+    tela.blit(imagem_fruta, (fruta_pos[0], fruta_pos[1]))
+
     for corpo in cobra_corpo:
-        pygame.draw.rect(tela, pygame.Color('white'), pygame.Rect(corpo[0], corpo[1], 10, 10))
+        tela.blit(imagem_corpo, (corpo[0], corpo[1]))
         
     
-    tela.blit(imagem_fruta, (fruta_pos[0], fruta_pos[1]))
+
 
     
     pygame.display.update()
