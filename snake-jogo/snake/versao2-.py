@@ -49,6 +49,16 @@ def carregar_imagem_de_fundo():
     imagem_fundo = pygame.transform.scale(imagem_fundo, (largura,altura))
     return imagem_fundo
 
+def reiniciar_jogo():
+    global cobra_pos, cobra_corpo, direcao, mudar_direcao, fruta_pos, fruta_spawn, pontos
+    cobra_pos = cobra_pos = [100, 50]
+    cobra_corpo = cobra_corpo = [[100, 50], [90, 50], [80, 50]]
+    direcao = "DIREITA"
+    mudar_direcao = direcao
+    fruta_pos = [random.randrange(1, (largura // 10)) * 10, random.randrange(1, (altura // 10)) * 10]
+    fruta_spawn = True
+    pontos = 0
+
 
 
 
@@ -128,6 +138,14 @@ while rodando:
 
     for corpo in cobra_corpo:
         tela.blit(imagem_corpo, (corpo[0], corpo[1]))
+
+    if cobra_pos[0] < 0 or cobra_pos[0] >= largura or cobra_pos[1] < 0 or cobra_pos[1] >= altura:
+        reiniciar_jogo()
+
+
+    for bloco in cobra_corpo[1:]:
+        if cobra_pos == bloco:
+            reiniciar_jogo()
         
     
 
