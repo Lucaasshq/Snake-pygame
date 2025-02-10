@@ -45,7 +45,7 @@ def carregar_imagem_corpo():
     return imagem_corpo
 
 def carregar_imagem_de_fundo():
-    imagem_fundo = pygame.image.load("snake-jogo/snake/fundo.jpg")
+    imagem_fundo = pygame.image.load("snake-jogo/snake/fundo-verde.png")
     imagem_fundo = pygame.transform.scale(imagem_fundo, (largura,altura))
     return imagem_fundo
 
