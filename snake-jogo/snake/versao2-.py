@@ -34,7 +34,7 @@ def exibir_texto_pontos(pontos):
     return text_surface, text_position
 
 def carregar_imagem_fruta():
-    imagem_fruta = pygame.image.load("snake-jogo\snake\Maçã.png")
+    imagem_fruta = pygame.image.load("snake-jogo/snake/Maçã.png")
     imagem_fruta = pygame.transform.scale(imagem_fruta, (10, 10))
     return imagem_fruta
 
