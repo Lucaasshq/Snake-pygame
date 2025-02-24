@@ -51,17 +51,17 @@ def exibir_texto_pontos(pontos):
 
 # Funções para carregar imagens
 def carregar_imagem_fruta():
-    imagem_fruta = pygame.image.load("snake-jogo/snake/Maçã.png")
+    imagem_fruta = pygame.image.load("snake/Maçã.png")
     imagem_fruta = pygame.transform.scale(imagem_fruta, (10, 10))
     return imagem_fruta
 
 def carregar_imagem_corpo():
-    imagem_corpo = pygame.image.load("snake-jogo/snake/2.png")
+    imagem_corpo = pygame.image.load("snake/2.png")
     imagem_corpo = pygame.transform.scale(imagem_corpo, (10, 10))
     return imagem_corpo
 
 def carregar_imagem_de_fundo():
-    imagem_fundo = pygame.image.load("snake-jogo/snake/fundo-verde.png")
+    imagem_fundo = pygame.image.load("snake/fundo-verde.png")
     imagem_fundo = pygame.transform.scale(imagem_fundo, (largura, altura))
     return imagem_fundo
 
